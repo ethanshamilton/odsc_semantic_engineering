@@ -13,7 +13,7 @@ from rdflib import Graph, URIRef, Literal
 load_dotenv()
 GDB_ENDPOINT = os.getenv("GDB_URL")
 GDB_REPO = os.getenv("GDB_REPO")
-pathname = "data/input/test_articles.json"
+pathname = "data/input/sample_articles.json"
 
 ## GET DATA FROM GRAPHDB
 query = """
