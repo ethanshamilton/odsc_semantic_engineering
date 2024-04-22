@@ -65,11 +65,17 @@ def generate_recommendations_from_graph(rdf_graph, input_uris, weights, namespac
         score /= len(path) # Normalize score by path length, prioritizing shorter paths. 
         return score
     
+    def rdflib_to_networkx_digraph(rdf_graph):
+        g = nx.DiGraph()
+        for s, p, o in rdf_graph:
+            g.add_edge(s, o, key=p)
+        return g
+    
     # Define necessary namespaces
     namespace = rdflib.Namespace(namespace_str)
     
     # Convert RDF graph to NetworkX graph for path processing
-    property_graph = rdflib.extras.external_graph_libs.rdflib_to_networkx_digraph(rdf_graph)
+    property_graph = rdflib_to_networkx_digraph(rdf_graph)
     
     # Define segment weights for content
     segment_weights = {
