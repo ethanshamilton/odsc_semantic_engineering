@@ -28,7 +28,7 @@ GDB_USERNAME = os.getenv("GDB_USERNAME")
 GDB_PASSWORD = os.getenv("GDB_PASSWORD")
 NO_PROXY=os.getenv("NO_PROXY")
 ### Global Constants
-INPUT_CONTENT_FILE = "data/input/articles_data.json"
+INPUT_CONTENT_FILE = "data/input/sample_articles.json"
 RDF_PATH = "data/output/ttl"
 RDF_PREFIX = "tagged_content"
 
